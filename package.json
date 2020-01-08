@@ -75,7 +75,7 @@
   ],
   "license": "Apache-2.0",
   "main": "lib/index.js",
-  "name": "node-xlsx",
+  "name": "node-xlsx-forked",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mgcrea/node-xlsx.git"
