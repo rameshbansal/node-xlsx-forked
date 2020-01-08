@@ -1,5 +1,5 @@
 import expect from 'expect';
-import {buildSheetFromMatrix} from '../../src/helpers';
+import {buildSheetFromMatrix} from './../../src/helpers';
 
 describe('node-xlsx helper', () => {
   describe('buildSheetFromMatrix', () => {
@@ -18,24 +18,5 @@ describe('node-xlsx helper', () => {
       expect(typeof buildSheetFromMatrix(notArrayData)).toBe('object');
     });
 
-    describe('with primitive data objects', () => {
-      it('should display data in percentage format with 2-decimal precision', () => {
-        const primitive = [[{t: 'n', z: 10, f: '=AVERAGE(2:2)'}]];
-
-        const sheet = buildSheetFromMatrix(primitive);
-        expect(sheet.A1.t).toBe('n');
-        expect(sheet.A1.f).toBe('=AVERAGE(2:2)');
-        expect(sheet.A1.z).toBe('0.00%');
-      });
-
-      it('should display data in percentage format with 2-decimal precision', () => {
-        const primitive = [[{t: 'n', z: 4, f: '=SUM(2:2)'}]];
-
-        const sheet = buildSheetFromMatrix(primitive);
-        expect(sheet.A1.t).toBe('n');
-        expect(sheet.A1.f).toBe('=SUM(2:2)');
-        expect(sheet.A1.z).toBe('#,##0.00');
-      });
-    });
   });
 });
